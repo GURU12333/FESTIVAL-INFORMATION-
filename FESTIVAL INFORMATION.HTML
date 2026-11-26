@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festival World | Explore Festivals</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fffaf4;
+    color: #333;
+}
+
+/* Navigation */
+header {
+    background: #6c238f;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 15px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    color: white;
+    background: linear-gradient(120deg, #8e44ad, #f39c12);
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    border: none;
+    background: white;
+    color: #6c238f;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Section */
+.section {
+    padding: 55px 7%;
+    text-align: center;
+}
+
+.section h2 {
+    color: #6c238f;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.section p {
+    line-height: 1.6;
+}
+
+/* Festival Cards */
+.festival-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    color: #8e44ad;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card button {
+    background: #8e44ad;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* About */
+.about {
+    background: #f3e5f5;
+    padding: 50px 8%;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #351044;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎉 Festival World</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#festivals">Festivals</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Explore the World of Festivals</h1>
+    <p>Discover the traditions, cultures and celebrations of India.</p>
+    <button onclick="document.getElementById('festivals').scrollIntoView({behavior:'smooth'})">
+        Explore Festivals
+    </button>
+</section>
+
+<section class="section" id="festivals">
+    <h2>Popular Indian Festivals</h2>
+    <p>Discover the beauty and importance of Indian celebrations.</p>
+
+    <div class="festival-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?w=600" alt="Diwali celebration">
+            <div class="card-content">
+                <h3>🪔 Diwali</h3>
+                <p>The festival of lights celebrates the victory of light over darkness and good over evil.</p>
+                <button onclick="showInfo('Diwali','Diwali is celebrated with lamps, decorations, sweets and family gatherings.')">Read More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=600" alt="Holi festival">
+            <div class="card-content">
+                <h3>🎨 Holi</h3>
+                <p>The festival of colours celebrates happiness, friendship and the arrival of spring.</p>
+                <button onclick="showInfo('Holi','Holi is celebrated with colours, music, sweets and joyful gatherings.')">Read More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=600" alt="Pongal celebration">
+            <div class="card-content">
+                <h3>🌾 Pongal</h3>
+                <p>A traditional Tamil harvest festival celebrated by thanking nature and farmers.</p>
+                <button onclick="showInfo('Pongal','Pongal is a four-day Tamil harvest festival celebrated with traditional food, decorations and gratitude to nature.')">Read More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604608672516-0e4c5e2b5f4a?w=600" alt="Christmas celebration">
+            <div class="card-content">
+                <h3>🎄 Christmas</h3>
+                <p>Christmas celebrates the birth of Jesus Christ with joy, love and togetherness.</p>
+                <button onclick="showInfo('Christmas','Christmas is celebrated on December 25 with decorations, gifts, prayers and family gatherings.')">Read More</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Festival World</h2>
+    <p>
+        Festival World is an informational website created to
+        introduce different festivals, their history, traditions
+        and cultural importance. Our goal is to celebrate diversity
+        and spread knowledge about festivals.
+    </p>
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: festivalworld@example.com</p>
+    <p>Thank you for visiting Festival World!</p>
+</section>
+
+<footer>
+    <p>© 2026 Festival World | All Rights Reserved</p>
+    <p>Celebrating Culture, Tradition and Happiness ❤️</p>
+</footer>
+
+<script>
+function showInfo(title, message) {
+    alert(title + "\n\n" + message);
+}
+</script>
+
+</body>
+</html>
